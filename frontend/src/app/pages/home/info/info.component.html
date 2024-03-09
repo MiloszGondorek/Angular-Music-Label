@@ -1,0 +1,23 @@
+<div>
+  <app-title
+    header="{{ header }}"
+    class="w-fit min-w-[25%] block"
+    [ngClass]="{ 'ml-[calc(50%+6px)]': videoFirst }"
+  />
+  <div class="grid grid-cols-2 gap-x-[12px] mt-[20px] min-h-[350px]">
+    <div class="min-h-[18vw]" *ngIf="videoFirst">
+      <iframe class="w-full h-full" [src]="this.videoSrc" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="text-justify flex flex-col gap-y-[12px] justify-between">
+      <p *ngFor="let i of info" class="text-lg font-light text-[#242424]">
+        {{ i }}
+      </p>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="!videoFirst">
+      <iframe class="w-full h-full" [src]="this.videoSrc" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div
+  class="w-5/6 max-w-[1400px] m-auto flex justify-between absolute bottom-[40px] z-20 left-1/2 -translate-x-1/2"
+>
+  <img
+    src="assets/icons/arrow-left.svg"
+    alt=""
+    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100"
+    (click)="moveLeft()"
+  />
+  <div class="flex w-11/12 rounded-[20px] overflow-hidden">
+    <img
+      *ngFor="let s of src"
+      src="{{ s }}"
+      alt=""
+      class="w-[25%] h-[200px] object-cover block box-border cursor-pointer border-solid border-[#E0D5D1]"
+      [ngClass]="{
+        'border-[3px]': s == selectedSrc,
+        'rounded-l-[20px]': getSrcId(s) == 0,
+        'rounded-r-[20px]': getSrcId(s) == 3
+      }"
+      draggable="false"
+      (click)="clickSelect(s)"
+    />
+  </div>
+  <img
+    src="assets/icons/arrow-right.svg"
+    alt=""
+    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100"
+    (click)="moveRight()"
+  />
+</div>
