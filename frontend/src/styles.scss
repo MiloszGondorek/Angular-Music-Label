@@ -24,6 +24,13 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.a-center-fixed {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 * {
   $time: 0.3s;
   transition: opacity $time, color $time, background-color $time;

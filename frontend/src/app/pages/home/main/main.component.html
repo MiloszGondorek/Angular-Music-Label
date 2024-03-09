@@ -1,4 +1,4 @@
-<div class="w-screen h-[calc(100vh-80px)] relative mt-[80px]">
+<div class="w-screen h-[calc(100vh-80px)] relative">
   <img src="{{ selectedSrc }}" alt="" class="object-cover w-full h-full" />
   <div
     class="bg-gradient-to-t from-[#1C1C1C] to-[#1C1C1C23] absolute top-0 left-0 h-[85%] w-full z-10"
@@ -14,7 +14,5 @@
       molestie neque quis velit tempor, commodo vehicula turpis tincidunt
     </p>
   </div>
-  <app-slider
-    (srcEmit)="NewImg($event)"
-  ></app-slider>
+  <app-slider (srcEmit)="NewImg($event)"></app-slider>
 </div>
