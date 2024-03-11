@@ -1,4 +1,4 @@
-<header class="h-[80px] w-full fixed top-0 z-50 bg-white">
+<header class="h-[80px] w-full fixed top-0 z-50 bg-white border-b-[1px] border-solid border-[#BABABA]">
   <div class="flex justify-between h-full w-5/6 m-auto max-w-[1400px]">
     <a href="/">
       <div
@@ -20,10 +20,18 @@
         </div>
       </div>
     </a>
-    <div class="flex my-auto gap-x-[50px] text-[16px]">
-      <a href="/gallery"><p>Galeria</p></a>
-      <a href=""><p>O nas</p></a>
-      <a href=""><p>Kontakt</p></a>
+    <div class="hidden md:flex my-auto gap-x-[50px] text-[16px]">
+      <a href="/galeria"><p>Galeria</p></a>
+      <a href="/studio"><p>Studio</p></a>
+      <a href="#about"><p>O nas</p></a>
+      <a href="#contact"><p>Kontakt</p></a>
     </div>
+    <img src="assets/images/more.png" alt="" class="block md:hidden cursor-pointer w-[40px] h-[40px] my-auto">
+  </div>
+  <div class="site absolute w-1/2 max-w-[400px] h-[calc(100vh-80px)] top-[80px] right-0 bg-white flex flex-col text-[20px]">
+    <a href="/galeria" class="py-[20px] hover:bg-[#dddddd] px-[10px]"><p>Galeria</p></a>
+    <a href="/studio" class="py-[20px] hover:bg-[#dddddd] px-[10px]"><p>Studio</p></a>
+    <a href="#about" class="py-[20px] hover:bg-[#dddddd] px-[10px]"><p>O nas</p></a>
+    <a href="#contact" class="py-[20px] hover:bg-[#dddddd] px-[10px]"><p>Kontakt</p></a>
   </div>
 </header>

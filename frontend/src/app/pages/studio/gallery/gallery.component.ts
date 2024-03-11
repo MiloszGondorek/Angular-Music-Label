@@ -1,19 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent {
-  currentSrc='';
-  showImg(src: string) {
-    this.currentSrc = src;
-  }
-  hideImg() {
-    this.currentSrc = '';
-  }
+
 }

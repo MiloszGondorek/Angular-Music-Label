@@ -12,7 +12,7 @@
       *ngFor="let s of src"
       src="{{ s }}"
       alt=""
-      class="w-[25%] h-[200px] object-cover block box-border cursor-pointer border-solid border-[#E0D5D1]"
+      class="w-[25%] h-[15vw] min-h-[100px] max-h-[200px] object-cover block box-border cursor-pointer border-solid border-[#E0D5D1]"
       [ngClass]="{
         'border-[3px]': s == selectedSrc,
         'rounded-l-[20px]': getSrcId(s) == 0,

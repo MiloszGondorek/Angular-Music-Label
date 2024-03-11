@@ -1,7 +1,13 @@
-img {
-  opacity: 90%;
-  cursor: pointer;
-}
-img:hover {
-  opacity: 100%;
+.content {
+  img {
+    opacity: 90%;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  img:hover {
+    opacity: 100%;
+  }
 }
