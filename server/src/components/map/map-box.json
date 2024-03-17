@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_map_map_boxes",
+  "info": {
+    "displayName": "MapBox"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Header": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

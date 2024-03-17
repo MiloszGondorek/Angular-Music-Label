@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_reusable_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "YT_link": {
+      "type": "text"
+    }
+  }
+}
