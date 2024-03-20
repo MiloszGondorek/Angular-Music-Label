@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -9,12 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './slider.component.scss',
 })
 export class SliderComponent {
-  src: string[] = [
-    'assets/images/img1.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img4.jpg',
-  ];
+  @Input() src: string[] = [];
 
   selectedSrc = 'assets/images/img1.jpg';
   currentId = 0;

@@ -1,21 +1,29 @@
 <div>
   <app-title
     header="{{ header }}"
-    class="w-1/2 lg:w-fit min-w-[25%] block"
+    class="w-fit md:w-1/2 lg:w-fit min-w-[25%] block"
     [ngClass]="{ 'lg:ml-[calc(50%+6px)]': videoFirst }"
   />
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-[12px] mt-[20px] min-h-[350px]">
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-[12px] mt-[20px] min-h-[350px]"
+  >
     <div class="aspect-video lg:aspect-auto lg:min-h-[18vw]" *ngIf="videoFirst">
       <iframe class="w-full h-full" [src]="this.videoSrc" allowfullscreen>
       </iframe>
     </div>
     <div class="text-justify flex flex-col gap-y-[12px] justify-between">
-      <p *ngFor="let i of info" class="text-lg font-light text-[#242424]">
+      <p
+        *ngFor="let i of info"
+        class="text-[15px] md:text-lg font-light text-[#242424]"
+      >
         {{ i }}
       </p>
       <ng-content></ng-content>
     </div>
-    <div *ngIf="!videoFirst" class="aspect-video lg:aspect-auto lg:min-h-[18vw]">
+    <div
+      *ngIf="!videoFirst"
+      class="aspect-video lg:aspect-auto lg:min-h-[18vw]"
+    >
       <iframe class="w-full h-full" [src]="this.videoSrc" allowfullscreen>
       </iframe>
     </div>

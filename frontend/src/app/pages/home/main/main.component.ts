@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SliderComponent } from './slider/slider.component';
 
 @Component({
@@ -9,7 +9,13 @@ import { SliderComponent } from './slider/slider.component';
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
-  selectedSrc = 'assets/images/img1.jpg';
+  @Input() selectedSrc = '';
+
+  @Input() header!: string;
+  @Input() headerSpan!: string;
+  @Input() desc!: string;
+
+  @Input() img: string[] = [];
 
   NewImg(newSrc: string) {
     this.selectedSrc = newSrc;

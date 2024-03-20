@@ -1,0 +1,15 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "HelloHeader": "Szkoła Overdrive",
+      "HelloText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt",
+      "Map_header": "KONTAKT",
+      "createdAt": "2024-03-17T21:29:20.171Z",
+      "updatedAt": "2024-03-18T15:28:07.521Z",
+      "publishedAt": "2024-03-17T21:53:48.493Z",
+      "MapLink": "https://maps.google.com/maps?amp;hl=en&amp;q=Sosnowiec%20Tuwima%2020/29%2041-208%20Sosnowiec+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+    }
+  },
+  "meta": {}
+}

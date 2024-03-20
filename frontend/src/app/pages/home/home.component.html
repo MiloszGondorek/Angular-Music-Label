@@ -1,32 +1,48 @@
-<div class="flex flex-col gap-y-[100px]">
-  <app-main />
+<div class="flex flex-col gap-y-[50px] md:gap-y-[100px]">
+  <app-main
+    [header]="helloHeader"
+    [headerSpan]="helloTextColor"
+    [desc]="helloText"
+    [img]="helloSrc"
+    [selectedSrc]="helloFirst"
+  />
   <app-info
     id="about"
-    header="O NAS"
-    vSrc="https://www.youtube.com/embed/In1l2qyUwEk?fullscrenn"
-    [info]="[
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
-      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan lacus in mauris fringilla, eu pharetra felis sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis ex.'
-    ]"
+    [header]="aboutHeader"
+    [vSrc]="aboutLink"
+    [info]="aboutDesc"
     class="max-w-[1400px] w-5/6 m-auto"
   />
-  <app-gallery class="max-w-[1400px] w-5/6 m-auto" />
+  <app-gallery [images]="galleryImg" class="max-w-[1400px] w-5/6 m-auto" />
   <app-info
-    header="LEKCJE"
-    vSrc="https://www.youtube.com/embed/In1l2qyUwEk?fullscrenn"
-    [info]="[
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
-      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan lacus in mauris fringilla, eu pharetra felis sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis ex.'
-    ]"
+    [header]="lessonHeader"
+    [vSrc]="lessonLink"
+    [info]="lessonDesc"
     class="max-w-[1400px] w-5/6 m-auto"
     [videoFirst]="true"
   >
-    <button
-      class="ml-auto border-[#AA8C71] border-[1px] text-[#AA8C71] px-8 py-3 text-[16px] hover:bg-[#AA8C71] hover:text-[#f3f3f3]"
-    >
-      Umów się na lekcję
-    </button>
+    <a [href]="lessonButtonLink" class="ml-auto">
+      <button
+        class="border-[#AA8C71] border-[1px] text-[#AA8C71] px-8 py-3 text-[16px] hover:bg-[#AA8C71] hover:text-[#f3f3f3]"
+      >
+        {{ lessonButtonText }}
+      </button>
+    </a>
   </app-info>
-  <app-jam-and-yt />
-  <app-contact id="contact" />
+  <app-jam-and-yt
+    [jamHeader]="jamHeader"
+    [jamDesc]="jamDesc"
+    [jamSrc]="jamLink"
+    [ytHeader]="ytHeader"
+    [ytDesc]="ytDesc"
+    [ytSrc]="ytLink"
+    [buttonText]="ytButtonText"
+    [buttonLink]="ytButtonLink"
+  />
+  <app-contact
+    id="contact"
+    [header]="mapHeader"
+    [data]="mapData"
+    [mapSrc]="mapSrc"
+  />
 </div>

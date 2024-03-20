@@ -1,55 +1,52 @@
-<div class="grid grid-cols-1 md:grid-cols-3 md:h-[150px] relative">
+<div
+  class="grid grid-cols-1 md:grid-cols-3 md:h-[150px] relative"
+  *ngIf="data.length > 0"
+>
   <h1
-    class="left-[calc((100vw-min(83.33vw,1400px))/2)] absolute md:-translate-y-[40%] text-[40px] font-bold tracking-[4px]"
+    class="left-[calc((100vw-min(83.33vw,1400px))/2)] absolute md:-translate-y-[40%] text-[35px] md:text-[40px] font-bold tracking-[2px] md:tracking-[4px]"
   >
-    KONTAKT
+    {{ header }}
   </h1>
   <div
     class="bg-[#EAE9EE] flex justify-center gap-x-[25px] mt-[30px] md:mt-0 pt-[40px] md:pt-[20px] py-[20px] md:py-0"
   >
     <img
-      src="assets/icons/place.svg"
+      [src]="data[0].img"
       alt=""
-      class="w-[40px]"
+      class="w-[40px] max-h-[45px] my-auto object-scale-down"
       draggable="false"
     />
     <div class="flex flex-col h-fit my-auto">
-      <h1>Sosnowiec</h1>
-      <p>Tuwima 20/29 41-208</p>
+      <h1>{{ data[0].header }}</h1>
+      <p>{{ data[0].desc }}</p>
     </div>
   </div>
   <div class="bg-[#ECE3DE] flex justify-center gap-x-[25px] py-[20px] md:py-0">
     <img
-      src="assets/icons/mail.svg"
+      [src]="data[1].img"
       alt=""
-      class="w-[40px]"
+      class="w-[40px] max-h-[45px] my-auto object-scale-down"
       draggable="false"
     />
     <div class="flex flex-col h-fit my-auto">
-      <h1>E-mail:</h1>
-      <p>radekczyja&commat;gmail.com</p>
+      <h1>{{ data[1].header }}</h1>
+      <p>{{ data[1].desc }}</p>
     </div>
   </div>
   <div class="bg-[#EAE9EE] flex justify-center gap-x-[25px] py-[20px] md:py-0">
     <img
-      src="assets/icons/telephone.svg"
+      [src]="data[2].img"
       alt=""
-      class="w-[40px]"
+      class="w-[40px] max-h-[45px] my-auto object-scale-down"
       draggable="false"
     />
     <div class="flex flex-col h-fit my-auto">
-      <h1>Telefon</h1>
-      <p>502 488 878</p>
+      <h1>{{ data[2].header }}</h1>
+      <p>{{ data[2].desc }}</p>
     </div>
   </div>
 </div>
 <div>
-  <!-- <img
-    src="assets/images/map.png"
-    alt=""
-   
-    draggable="false"
-  /> -->
   <iframe
     class="h-[25vw] min-h-[250px] max-h-[450px] w-screen object-cover"
     frameborder="0"
@@ -57,10 +54,6 @@
     marginheight="0"
     marginwidth="0"
     id="gmap_canvas"
-    src="https://maps.google.com/maps?width=1920&amp;height=1080&amp;hl=en&amp;q=Sosnowiec%20Tuwima%2020/29%2041-208%20Sosnowiec+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+    [src]="mapLink"
   ></iframe>
 </div>
-<script
-  type="text/javascript"
-  src="https://embedmaps.com/google-maps-authorization/script.js?id=c528f3fc2e1a4890b2e99e7d965c53f47a186c94"
-></script>

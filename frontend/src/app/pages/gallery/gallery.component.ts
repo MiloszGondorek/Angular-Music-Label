@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TitleComponent } from '../../reusable/title/title.component';
 import { CommonModule } from '@angular/common';
+
+import { http } from '../../../httpConnection';
 
 @Component({
   selector: 'app-gallery',
@@ -9,54 +11,31 @@ import { CommonModule } from '@angular/common';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   currentSrc: string = '';
 
-  images: string[] = [
-    'assets/images/img1.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img4.jpg',
+  images: string[] = [];
+  header!: string;
 
-    'assets/images/img4.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img1.jpg',
+  ngOnInit(): void {
+    this.getData();
+  }
 
-    'assets/images/img1.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img4.jpg',
+  async getData() {
+    const req = `gallery?populate=Images`;
+    let data: any = await http.getAttributes(req);
 
-    'assets/images/img4.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img1.jpg',
+    this.header = data.Header;
 
-    'assets/images/img1.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img4.jpg',
-
-    'assets/images/img4.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img1.jpg',
-
-    'assets/images/img1.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img4.jpg',
-
-    'assets/images/img4.jpg',
-    'assets/images/img3.jpg',
-    'assets/images/img2.jpg',
-    'assets/images/img1.jpg',
-  ];
+    data.Images.data.forEach((el: any) => {
+      this.images.push(http.getURL() + el.attributes.url);
+    });
+  }
 
   showImg(src: string) {
     this.currentSrc = src;
   }
+
   hideImg() {
     this.currentSrc = '';
   }

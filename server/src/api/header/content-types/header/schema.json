@@ -12,18 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "FirstLine_letter": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 1
-    },
     "FirstLine": {
       "type": "string"
-    },
-    "SecondLine_letter": {
-      "type": "string",
-      "maxLength": 1,
-      "minLength": 1
     },
     "SecondLine": {
       "type": "string"

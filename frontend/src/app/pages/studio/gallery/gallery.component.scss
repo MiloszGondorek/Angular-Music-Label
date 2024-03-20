@@ -1,0 +1,11 @@
+.content {
+  img {
+    -webkit-user-drag: none;
+    opacity: 80%;
+    object-fit: cover;
+  }
+  img:hover {
+    opacity: 100%;
+    cursor: pointer;
+  }
+}

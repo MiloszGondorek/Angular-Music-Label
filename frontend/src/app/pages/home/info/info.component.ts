@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TitleComponent } from '../../../reusable/title/title.component';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -10,7 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss',
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent implements OnChanges {
   @Input() header: string = '';
   @Input() info!: string[];
 
@@ -21,7 +21,9 @@ export class InfoComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  ngOnInit(): void {
-    this.videoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.vSrc);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['vSrc']) {
+      this.videoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.vSrc);
+    }
   }
 }

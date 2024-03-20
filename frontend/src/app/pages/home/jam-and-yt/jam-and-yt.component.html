@@ -4,81 +4,43 @@
       class="px-[calc((100vw-min(83.33vw,1400px))/2)] lg:pr-[50px] ml-auto h-full flex flex-col relative"
     >
       <h1
-        class="text-[40px] font-bold -translate-y-[40%] tracking-[4px] absolute top-0"
+        class="text-[35px] md:text-[40px] font-bold -translate-y-[40%] tracking-[2px] md:tracking-[4px] absolute top-0"
       >
-        JAM SESSION
+        {{ jamHeader }}
       </h1>
       <div
         class="text-[16px] text-[#242424] font-light text-justify flex flex-col justify-center gap-y-[25px] my-[40px] lg:my-auto"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          molestie neque quis velit tempor, commodo vehicula turpis tincidunt.
-          Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl.
-          Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna.
-          Sed mauris tellus, lacinia id sem at, convallis eleifend libero.
-          Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at
-          faucibus. Phasellus sed ex magna.
-        </p>
-        <p>
-          Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo
-          eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor
-          interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet
-          ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis
-          eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla
-          facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Nullam accumsan lacus in mauris fringilla, eu pharetra felis
-          sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis
-          ex.
-        </p>
+        <p *ngFor="let i of jamDesc">{{ i }}</p>
       </div>
     </div>
   </div>
   <div class="aspect-video lg:aspect-auto">
-    <iframe
-      class="w-full h-full"
-      src="https://www.youtube.com/embed/In1l2qyUwEk?fullscrenn"
-      allowfullscreen
-    >
-    </iframe>
+    <iframe class="w-full h-full" [src]="jamLink" allowfullscreen> </iframe>
   </div>
   <div class="aspect-video lg:aspect-auto order-4 lg:order-3">
-    <iframe
-      class="w-full h-full"
-      src="https://www.youtube.com/embed/In1l2qyUwEk?fullscrenn"
-      allowfullscreen
-    >
-    </iframe>
+    <iframe class="w-full h-full" [src]="ytLink" allowfullscreen> </iframe>
   </div>
   <div class="bg-[#ECE3DE] order-3 lg:order-4">
-    <div class="px-[calc((100vw-min(83.33vw,1400px))/2)] lg:pl-[50px] my-[20px]">
-      <h1 class="text-[40px] font-bold tracking-[4px] mb-[20px]">
-        YOUTUBE
+    <div
+      class="px-[calc((100vw-min(83.33vw,1400px))/2)] lg:pl-[50px] my-[20px]"
+    >
+      <h1
+        class="text-[35px] md:text-[40px] font-bold tracking-[2px] md:tracking-[4px] mb-[20px]"
+      >
+        {{ ytHeader }}
       </h1>
       <div
         class="text-[16px] text-[#242424] font-light text-justify flex flex-col justify-between gap-y-[25px]"
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          molestie neque quis velit tempor, commodo vehicula turpis tincidunt.
-          Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl.
-          Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna.
-          Sed mauris tellus, lacinia id sem at, convallis eleifend libero.
-          Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at
-          faucibus. Phasellus sed ex magna.
-        </p>
-        <p>
-          Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo
-          eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor
-          interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet
-          ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis
-          eget condimentum. Phasellus et est eget est vestibulum tempus.
-        </p>
-        <button
-          class="ml-auto border-[#696C84] border-[1px] text-[#696C84] px-8 py-3 text-[16px] hover:bg-[#696C84] hover:text-[#f3f3f3]"
+        <p *ngFor="let i of ytDesc">{{ i }}</p>
+        <a href="{{ buttonLink }}" class="ml-auto" target="_blank">
+          <button
+            class="border-[#696C84] border-[1px] text-[#696C84] px-8 py-3 text-[16px] hover:bg-[#696C84] hover:text-[#f3f3f3]"
+          >
+            {{ buttonText }}
+          </button></a
         >
-          Zobacz nasz kanał
-        </button>
       </div>
     </div>
   </div>
