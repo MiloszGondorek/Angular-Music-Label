@@ -16,10 +16,10 @@ export interface ReusableButton extends Schema.Component {
   collectionName: 'components_reusable_buttons';
   info: {
     displayName: 'Button';
+    description: '';
   };
   attributes: {
     Text: Attribute.String;
-    Color_in_HEX: Attribute.String;
     Link: Attribute.String;
   };
 }

@@ -4,10 +4,12 @@
   <img
     src="assets/icons/arrow-left.svg"
     alt=""
-    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100"
+    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100 hidden md:block"
     (click)="moveLeft()"
   />
-  <div class="flex w-11/12 rounded-[20px] overflow-hidden">
+  <div
+    class="flex w-full md:w-11/12 rounded-[10px] md:rounded-[20px] overflow-hidden"
+  >
     <img
       *ngFor="let s of src"
       src="{{ s }}"
@@ -25,7 +27,7 @@
   <img
     src="assets/icons/arrow-right.svg"
     alt=""
-    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100"
+    class="h-[32px] my-auto cursor-pointer opacity-80 hover:opacity-100 hidden md:block"
     (click)="moveRight()"
   />
 </div>
