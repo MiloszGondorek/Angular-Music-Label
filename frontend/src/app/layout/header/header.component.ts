@@ -26,15 +26,12 @@ export class HeaderComponent implements OnInit {
     this.showHeader = !this.showHeader;
   }
 
-  async getData() {
-    const req = `header?populate=Links`;
-    let data: any = await http.getAttributes(req);
+  getData() {
+    this.FirstLine = 'GUITAR';
+    this.SecondLine = 'STUDIO';
 
-    this.FirstLine = data.FirstLine;
-    this.SecondLine = data.SecondLine;
-
-    data.Links.forEach((el: any) => {
-      this.links.push(new Link(el.Name, el.Link));
-    });
+    this.links.push(new Link('HOME', ''));
+    this.links.push(new Link('GALLERY', 'galeria'));
+    this.links.push(new Link('STUDIO', 'studio'));
   }
 }

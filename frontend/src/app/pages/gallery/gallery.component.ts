@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TitleComponent } from '../../reusable/title/title.component';
 import { CommonModule } from '@angular/common';
 
-import { http } from '../../../httpConnection';
-
 @Component({
   selector: 'app-gallery',
   standalone: true,
@@ -21,15 +19,9 @@ export class GalleryComponent implements OnInit {
     this.getData();
   }
 
-  async getData() {
-    const req = `gallery?populate=Images`;
-    let data: any = await http.getAttributes(req);
-
-    this.header = data.Header;
-
-    data.Images.data.forEach((el: any) => {
-      this.images.push(http.getURL() + el.attributes.url);
-    });
+  getData() {
+    this.images.push('/assets/images/fb.png');
+    this.header = 'Gallery';
   }
 
   showImg(src: string) {

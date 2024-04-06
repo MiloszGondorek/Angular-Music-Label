@@ -1,50 +1,12 @@
-<div
-  class="grid grid-cols-4 grid-rows-3 sm:grid-rows-2 gap-[6px] md:gap-[10px] content"
->
-  <img
-    [src]="src[0]"
-    alt=""
-    (click)="showImg(src[0])"
-    class="row-span-2 col-span-2 h-full"
-  />
-  <img
-    [src]="src[1]"
-    alt=""
-    (click)="showImg(src[1])"
-    class="aspect-square col-span-2 sm:col-span-1"
-  />
-  <img
-    [src]="src[2]"
-    alt=""
-    (click)="showImg(src[2])"
-    class="aspect-square col-span-2 sm:col-span-1"
-  />
-  <img
-    [src]="src[3]"
-    alt=""
-    (click)="showImg(src[3])"
-    class="aspect-square col-span-2 sm:col-span-1"
-  />
-  <img
-    [src]="src[4]"
-    alt=""
-    (click)="showImg(src[4])"
-    class="aspect-square col-span-2 sm:col-span-1"
-  />
+<div class="grid grid-cols-4 grid-rows-3 sm:grid-rows-2 gap-[6px] md:gap-[10px] content">
+  <img [src]="src[0]" alt="" (click)="showImg(src[0])" class="row-span-2 col-span-2 h-full" />
+  <img [src]="src[1]" alt="" (click)="showImg(src[1])" class="aspect-square col-span-2 sm:col-span-1" />
+  <img [src]="src[2]" alt="" (click)="showImg(src[2])" class="aspect-square col-span-2 sm:col-span-1" />
+  <img [src]="src[3]" alt="" (click)="showImg(src[3])" class="aspect-square col-span-2 sm:col-span-1" />
+  <img [src]="src[4]" alt="" (click)="showImg(src[4])" class="aspect-square col-span-2 sm:col-span-1" />
 </div>
 
-<div
-  class="fixed left-0 top-0 w-full h-screen z-[200] flex !transition-none"
-  *ngIf="currentSrc != ''"
->
-  <img
-    src="{{ currentSrc }}"
-    alt=""
-    draggable="false"
-    class="block w-4/5 h-auto max-h-[80vh] m-auto"
-  />
-  <div
-    class="bg absolute bg-[#00000060] w-screen h-screen -z-10 !transition-none"
-    (click)="hideImg()"
-  ></div>
+<div class="fixed left-0 top-0 w-full h-screen z-[200] flex !transition-none" *ngIf="currentSrc != ''">
+  <img src="{{ currentSrc }}" alt="" draggable="false" class="block w-4/5 h-auto max-h-[80vh] m-auto object-cover" />
+  <div class="bg absolute bg-[#00000060] w-screen h-screen -z-10 !transition-none" (click)="hideImg()"></div>
 </div>

@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   links: Link[] = [];
 
   ngOnInit(): void {
-    this.getData();
+    // this.getData();
   }
 
   async getData() {

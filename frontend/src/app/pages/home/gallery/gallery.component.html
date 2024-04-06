@@ -1,61 +1,14 @@
 <div
-  class="grid grid-cols-3 md:grid-cols-4 grid-rows-3 md:grid-rows-2 m-auto aspect-square md:aspect-[2] gap-[5px] md:gap-[12px] content"
->
-  <img
-    [src]="images[0]"
-    alt=""
-    class="row-span-2 h-full"
-    draggable="false"
-    (click)="showImg(images[0])"
-  />
-  <img
-    [src]="images[1]"
-    alt=""
-    class="h-full"
-    draggable="false"
-    (click)="showImg(images[1])"
-  />
-  <img
-    [src]="images[2]"
-    alt=""
-    class="md:col-span-2 w-full h-full"
-    draggable="false"
-    (click)="showImg(images[2])"
-  />
-  <img
-    [src]="images[3]"
-    alt=""
-    class="h-full"
-    draggable="false"
-    (click)="showImg(images[3])"
-  />
-  <img
-    [src]="images[4]"
-    alt=""
-    class="h-full"
-    draggable="false"
-    (click)="showImg(images[4])"
-  />
-  <img
-    [src]="images[0]"
-    alt=""
-    class="h-full col-span-3 md:col-span-1"
-    draggable="false"
-    (click)="showImg(images[0])"
-  />
+  class="grid grid-cols-3 md:grid-cols-4 grid-rows-3 md:grid-rows-2 m-auto aspect-square md:aspect-[2] gap-[5px] md:gap-[12px] content">
+  <img [src]="images[0]" alt="" class="row-span-2 h-full" draggable="false" (click)="showImg(images[0])" />
+  <img [src]="images[1]" alt="" class="h-full" draggable="false" (click)="showImg(images[1])" />
+  <img [src]="images[2]" alt="" class="md:col-span-2 w-full h-full" draggable="false" (click)="showImg(images[2])" />
+  <img [src]="images[3]" alt="" class="h-full" draggable="false" (click)="showImg(images[3])" />
+  <img [src]="images[4]" alt="" class="h-full" draggable="false" (click)="showImg(images[4])" />
+  <img [src]="images[5]" alt="" class="h-full col-span-3 md:col-span-1" draggable="false"
+    (click)="showImg(images[5])" />
 </div>
-<div
-  class="fixed left-0 top-0 w-full h-screen z-[200] flex !transition-none"
-  *ngIf="currentSrc != ''"
->
-  <img
-    src="{{ currentSrc }}"
-    alt=""
-    draggable="false"
-    class="block w-4/5 h-auto max-h-[80vh] object-cover m-auto"
-  />
-  <div
-    class="bg absolute bg-[#00000060] w-screen h-screen -z-10 !transition-none"
-    (click)="hideImg()"
-  ></div>
+<div class="fixed left-0 top-0 w-full h-screen z-[200] flex !transition-none" *ngIf="currentSrc != ''">
+  <img src="{{ currentSrc }}" alt="" draggable="false" class="block w-4/5 h-auto max-h-[80vh] object-cover m-auto" />
+  <div class="bg absolute bg-[#00000060] w-screen h-screen -z-10 !transition-none" (click)="hideImg()"></div>
 </div>

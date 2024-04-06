@@ -1,22 +1,14 @@
-<header
-  class="h-[80px] w-full fixed top-0 z-50 bg-white border-b-[1px] border-solid border-[#BABABA]"
->
+<header class="h-[80px] w-full fixed top-0 z-50 bg-white border-b-[1px] border-solid border-[#BABABA]">
   <div class="flex justify-between h-full w-5/6 m-auto max-w-[1400px]">
     <a href="/">
-      <div
-        class="relative h-full flex cursor-pointer opacity-80 hover:opacity-100"
-      >
-        <div
-          class="relative h-full flex flex-col justify-center text-[25px] font-semibold"
-        >
+      <div class="relative h-full flex cursor-pointer opacity-80 hover:opacity-100">
+        <div class="relative h-full flex flex-col justify-center text-[25px] font-semibold">
           <div class="absolute w-full h-[7px] bg-black top-0"></div>
           <h1 class="mx-auto select-none">{{ FirstLine[0] }}</h1>
           <h1 class="mt-[-8px] mx-auto select-none">{{ SecondLine[0] }}</h1>
           <div class="absolute w-full h-[7px] bg-black bottom-0"></div>
         </div>
-        <div
-          class="h-full flex flex-col justify-center text-[20px] tracking-[4px] ml-[5px]"
-        >
+        <div class="h-full flex flex-col justify-center text-[20px] tracking-[4px] ml-[5px]">
           <p class="select-none">{{ FirstLine.substring(1) }}</p>
           <p class="mt-[-2px] select-none">{{ SecondLine.substring(1) }}</p>
         </div>
@@ -24,24 +16,24 @@
     </a>
     <div class="hidden md:flex my-auto gap-x-[50px] text-[16px]">
       <ng-container *ngFor="let l of links">
-        <a href="/{{ l.link }}"
-          ><p>{{ l.text }}</p></a
-        >
+        <a href="/{{ l.link }}">
+          <p>{{ l.text }}</p>
+        </a>
       </ng-container>
     </div>
-    <img
-      src="assets/images/more.png"
-      alt=""
-      class="block md:hidden cursor-pointer w-[40px] h-[40px] my-auto"
-      (click)="changeVisability()"
-    />
+    <img src="assets/images/more.png" alt="" class="block md:hidden cursor-pointer w-[40px] h-[40px] my-auto"
+      (click)="changeVisability()" />
   </div>
-  <div
-    [ngStyle]="{ transform: 'translateX(' + (showHeader ? 0 : 100) + '%)' }"
-    class="site absolute w-1/2 min-w-[250px] max-w-[300px] h-[calc(100vh-80px)] top-[80px] right-0 bg-white flex flex-col md:hidden text-[16px]"
-  >
-    <a href="/galeria" class=""><p>Galeria</p></a>
-    <a href="/studio"><p>Studio</p></a>
-    <a href="#contact"><p>Kontakt</p></a>
+  <div [ngStyle]="{ transform: 'translateX(' + (showHeader ? 0 : 100) + '%)' }"
+    class="site absolute w-1/2 min-w-[250px] max-w-[300px] h-[calc(100vh-80px)] top-[80px] right-0 bg-white flex flex-col md:hidden text-[16px]">
+    <a href="/galeria" class="">
+      <p>Galeria</p>
+    </a>
+    <a href="/studio">
+      <p>Studio</p>
+    </a>
+    <a href="#contact">
+      <p>Kontakt</p>
+    </a>
   </div>
 </header>

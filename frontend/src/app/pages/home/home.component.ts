@@ -22,20 +22,14 @@ import { http } from '../../../httpConnection';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  helloHeader!: string;
   helloText!: string;
-  helloTextColor!: string;
   helloSrc: string[] = [];
   helloFirst!: string;
 
-  aboutHeader!: string;
-  aboutLink!: string;
   aboutDesc: string[] = [];
 
   galleryImg: string[] = [];
 
-  lessonHeader!: string;
-  lessonLink!: string;
   lessonDesc: string[] = [];
 
   lessonButtonText!: string;
@@ -60,72 +54,65 @@ export class HomeComponent implements OnInit {
     this.getData();
   }
 
-  async getData() {
-    const req = `home-page?populate=*`;
-    let data: any = await http.getAttributes(req);
-    this.helloHeader = data.HelloHeader;
-    this.helloTextColor = data.HelloTextColor;
-    this.helloText = data.HelloText;
+  getData() {
+    // const req = `home-page?populate=*`;
+    // let data: any = await http.getAttributes(req);
+    this.helloText =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt';
 
-    data.MainImages.data.forEach((el: any) => {
-      if (this.helloSrc.length == 0)
-        this.helloFirst = http.getURL() + el.attributes.url;
-      if (this.helloSrc.length < 4)
-        this.helloSrc.push(http.getURL() + el.attributes.url);
-    });
+    this.helloFirst = '/assets/images/img1.jpg';
+    this.helloSrc.push('/assets/images/img1.jpg');
+    this.helloSrc.push('/assets/images/img2.jpg');
+    this.helloSrc.push('/assets/images/img3.jpg');
+    this.helloSrc.push('/assets/images/img4.jpg');
 
-    const about = data.AboutUs;
-    this.aboutHeader = about.Header;
-    this.aboutDesc = about.Description.split('\n');
-    this.aboutLink = about.YT_link;
+    this.aboutDesc = [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
+      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan lacus in mauris fringilla, eu pharetra felis sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis ex.',
+    ];
+    this.galleryImg.push('/assets/images/img1.jpg');
+    this.galleryImg.push('/assets/images/img2.jpg');
+    this.galleryImg.push('/assets/images/img3.jpg');
+    this.galleryImg.push('/assets/images/img4.jpg');
+    this.galleryImg.push('/assets/images/img5.jpg');
+    this.galleryImg.push('/assets/images/img2.jpg');
 
-    const gallery = data.Gallery.data;
+    this.lessonDesc = [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
+      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan lacus in mauris fringilla, eu pharetra felis sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis ex.',
+    ];
 
-    gallery.forEach((el: any) => {
-      if (this.galleryImg.length < 6) {
-        this.galleryImg.push(http.getURL() + el.attributes.url);
-      }
-    });
+    this.jamDesc = [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
+      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan lacus in mauris fringilla, eu pharetra felis sollicitudin. Curabitur et nibh interdum, malesuada urna non, lobortis ex.',
+    ];
 
-    const lessons = data.Lessons;
+    this.ytDesc = [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie neque quis velit tempor, commodo vehicula turpis tincidunt. Integer eros enim, lobortis quis posuere mattis, accumsan vel nisl. Praesent eleifend velit maximus, eleifend mauris et, ullamcorper urna. Sed mauris tellus, lacinia id sem at, convallis eleifend libero. Mauris rutrum sed leo et vestibulum. Aliquam molestie sed eros at faucibus. Phasellus sed ex magna.',
+      'Ut sem augue, auctor nec accumsan non, feugiat nec lacus. In non leo eget mi sagittis lacinia a ac tellus. Suspendisse quis urna eu tortor interdum hendrerit. Aenean velit enim, suscipit eu varius sed, aliquet ut enim. Morbi sollicitudin faucibus ex. Proin convallis quis felis eget condimentum. Phasellus et est eget est vestibulum tempus. Nulla facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    ];
 
-    this.lessonHeader = lessons.Header;
-    this.lessonDesc = lessons.Description.split('\n');
-    this.lessonLink = lessons.YT_link;
+    this.mapData.push(
+      new MapData('/assets/icons/place.svg', 'Sosnowiec', 'Tuwima 20/29 41-208')
+    );
+    this.mapData.push(
+      new MapData(
+        '/assets/icons/mail.svg',
+        'E-mail',
+        'm.gondorek.kontakt@gmail.com'
+      )
+    );
+    this.mapData.push(
+      new MapData('/assets/icons/telephone.svg', 'Telephone', '607 761 708')
+    );
+    // const req2 = `home-page?populate=MapBox.Image`;
+    // data = await http.getAttributes(req2);
 
-    const lessonButton = data.Lesson_button;
-    this.lessonButtonText = lessonButton.Text;
-    this.lessonButtonLink = lessonButton.Link;
-
-    const jam = data.Jam;
-    this.jamHeader = jam.Header;
-    this.jamDesc = jam.Description.split('\n');
-    this.jamLink = jam.YT_link;
-
-    const yt = data.Youtube;
-    this.ytHeader = yt.Header;
-    this.ytDesc = yt.Description.split('\n');
-    this.ytLink = yt.YT_link;
-
-    const ytButton = data.Youtube_button;
-
-    this.ytButtonText = ytButton.Text;
-    this.ytButtonLink = ytButton.Link;
-
-    const req2 = `home-page?populate=MapBox.Image`;
-    data = await http.getAttributes(req2);
-
-    this.mapHeader = data.Map_header;
-    this.mapSrc = data.MapLink;
-    const mapElementsData = data.MapBox;
-    mapElementsData.forEach((el: any) => {
-      this.mapData.push(
-        new MapData(
-          http.getURL() + el.Image.data.attributes.url,
-          el.Header,
-          el.Description
-        )
-      );
-    });
+    // this.mapHeader = data.Map_header;
+    // this.mapSrc = data.MapLink;
+    // const mapElementsData = data.MapBox;
+    // mapElementsData.forEach((el: any) => {
+    //
+    // });
   }
 }
